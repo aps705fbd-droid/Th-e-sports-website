@@ -1,0 +1,8 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="100" fill="#090711"/>
+  <path d="M80 100H432L390 165H122Z" fill="#9b45e8"/>
+  <text x="256" y="280" font-size="125" font-weight="900" text-anchor="middle" fill="#ffffff" font-family="Arial">TH</text>
+  <text x="256" y="355" font-size="42" font-weight="bold" text-anchor="middle" fill="#bd70ff" font-family="Arial">E-SPORTS</text>
+  <path d="M120 400H392" stroke="#9b45e8" stroke-width="10"/>
+</svg>
