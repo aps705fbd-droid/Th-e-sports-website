@@ -4,36 +4,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TH E-SPORTS | Official</title>
+<title>TH E-SPORTS</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#080710;color:white;font-family:Arial,sans-serif}
-header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #292039}
-.logo{font-size:23px;font-weight:900;color:#b76aff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#090711;color:white;font-family:Arial,sans-serif}
+header{padding:20px 6%;display:flex;justify-content:space-between;align-items:center;background:#100c1b;border-bottom:1px solid #42245e}
+.logo{font-size:23px;font-weight:900;color:#c17aff}
 .logo span{color:white}
-nav a{color:#ddd;text-decoration:none;margin-left:18px;font-size:14px}
-.hero{padding:85px 7%;text-align:center;background:radial-gradient(ellipse at center,#32104d 0%,#100b1c 48%,#080710 78%)}
-.tag{color:#c58aff;letter-spacing:4px;font-size:12px}
-h1{font-size:clamp(42px,9vw,75px);margin:20px 0;font-weight:900}
-h1 span{color:#b65cff}
-.hero p{color:#bbb;line-height:1.7;max-width:550px;margin:auto}
-.btn{display:inline-block;margin-top:28px;padding:14px 27px;background:#9b45e8;color:white;text-decoration:none;border-radius:7px;font-weight:bold}
-section{padding:55px 7%}
-.heading{text-align:center;font-size:30px;margin-bottom:30px}
-.heading span{color:#bd70ff}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#151020;border:1px solid #39254e;border-radius:12px;padding:23px}
-.card h3{font-size:21px;margin:12px 0}
-.card p{color:#aaa;line-height:1.7;font-size:14px}
-.tagbox{display:inline-block;background:#392052;color:#d9aaff;padding:6px 11px;border-radius:20px;font-size:12px}
-.card a{color:#ce91ff;text-decoration:none;display:inline-block;margin-top:15px}
-.formbox{max-width:520px;margin:auto;background:#151020;border:1px solid #39254e;padding:25px;border-radius:12px}
-input,select{width:100%;padding:14px;margin:9px 0;background:#090712;color:white;border:1px solid #514064;border-radius:6px}
-button{width:100%;padding:14px;background:#9b45e8;color:white;border:0;border-radius:6px;font-weight:bold;margin-top:12px}
-#message{color:#c994ff;margin-top:15px;text-align:center}
-footer{text-align:center;padding:30px;color:#888;border-top:1px solid #30213c}
+nav a{color:white;text-decoration:none;margin-left:12px;font-size:13px}
+.hero{text-align:center;padding:75px 15px;background:radial-gradient(circle,#45136b,#100b19 65%)}
+.hero small{color:#d4a0ff;letter-spacing:4px}
+h1{font-size:clamp(40px,9vw,70px);margin:20px 0}
+h1 span,.purple{color:#bd70ff}
+.hero p{color:#ccc;line-height:1.7}
+.btn{display:inline-block;background:#9b45e8;color:white;padding:13px 22px;border-radius:7px;text-decoration:none;margin-top:22px;font-weight:bold}
+section{padding:45px 6%}
+.heading{text-align:center;font-size:27px;margin-bottom:25px}
+.tabs{display:flex;justify-content:center;gap:12px;margin-bottom:25px}
+.tabs button{width:auto;padding:12px 28px;background:#241633;border:1px solid #70429a}
+.tabs button.active{background:#9b45e8}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.slot{padding:15px 5px;text-align:center;background:#171321;border:1px solid #49335c;border-radius:8px}
+.slot strong{display:block;font-size:19px;margin-bottom:8px}
+.slot small{font-size:11px;color:#aaa}
+.slot.booked{border-color:#a34c57;background:#28131c}
+.slot.booked small{color:#ff9da8}
+.slot.available{border-color:#477b61}
+.slot.available small{color:#8ce0a8}
+.formbox{max-width:500px;margin:auto;background:#171321;padding:22px;border:1px solid #49335c;border-radius:12px}
+input,select{width:100%;padding:14px;margin:8px 0;background:#090711;color:white;border:1px solid #57416c;border-radius:6px}
+button{cursor:pointer;border:0;border-radius:6px;color:white}
+.formbox button{width:100%;padding:14px;background:#9b45e8;font-weight:bold}
+.note{color:#aaa;font-size:12px;line-height:1.6;margin-top:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
+.card{background:#171321;border:1px solid #49335c;padding:22px;border-radius:10px}
+.card p{color:#bbb;line-height:1.6;margin-top:10px;font-size:14px}
+footer{text-align:center;padding:30px;color:#999;border-top:1px solid #39234c}
 footer a{color:#c58aff;text-decoration:none}
-@media(max-width:600px){header{flex-direction:column;gap:15px}nav a{margin:0 7px}.hero{padding:65px 6%}}
+@media(max-width:500px){.grid{grid-template-columns:repeat(3,1fr)}header{flex-direction:column;gap:14px}nav a{margin:0 6px}}
 </style>
 </head>
 <body>
@@ -42,99 +50,103 @@ footer a{color:#c58aff;text-decoration:none}
 <div class="logo">TH <span>E-SPORTS</span></div>
 <nav>
 <a href="#home">Home</a>
-<a href="#tournaments">Tournaments</a>
+<a href="#slots">Slots</a>
 <a href="#register">Register</a>
 <a href="#about">About</a>
 </nav>
 </header>
 
 <div class="hero" id="home">
-<div class="tag">WELCOME TO THE BATTLE</div>
+<small>WELCOME TO THE BATTLE</small>
 <h1>THE WAR <span>BEGINS</span></h1>
-<p>One platform. One community. Endless battles.
-Welcome to TH E-SPORTS — where champions rise.</p>
-<a class="btn" href="#tournaments">EXPLORE TOURNAMENTS</a>
+<p>One community. Endless battles.<br>THIS IS WHERE CHAMPIONS RISE.</p>
+<a class="btn" href="#slots">VIEW TOURNAMENT SLOTS</a>
 </div>
 
-<section id="tournaments">
-<h2 class="heading">OUR <span>TOURNAMENTS</span></h2>
-<div class="cards">
-<div class="card">
-<span class="tagbox">BATTLE ROYALE</span>
-<h3>BR Tournament</h3>
-<p>Squad up. Fight hard. Become the champion.</p>
-<a href="#register">Register Now →</a>
+<section id="slots">
+<h2 class="heading">TOURNAMENT <span class="purple">SLOTS</span></h2>
+<div class="tabs">
+<button id="brBtn" class="active" onclick="showSlots('BR')">BR MODE</button>
+<button id="csBtn" onclick="showSlots('CS')">CS MODE</button>
 </div>
-<div class="card">
-<span class="tagbox">CLASH SQUAD</span>
-<h3>CS Tournament</h3>
-<p>Show your skills and prove your team's power.</p>
-<a href="#register">Register Now →</a>
-</div>
-<div class="card">
-<span class="tagbox">UPDATES</span>
-<h3>Results & News</h3>
-<p>Stay connected for tournament announcements and match results.</p>
-<a href="https://www.instagram.com/th_esports_18_/">View Updates →</a>
-</div>
-</div>
+<div id="slotGrid" class="grid"></div>
+<p class="note">Green = Available | Red = Booked. Slot information shown here is a demo until connected to a shared database.</p>
 </section>
 
 <section id="register">
-<h2 class="heading">TEAM <span>REGISTRATION</span></h2>
+<h2 class="heading">TEAM <span class="purple">REGISTRATION</span></h2>
 <div class="formbox">
 <form id="regForm">
 <input id="team" placeholder="Team Name" required>
 <input id="leader" placeholder="Team Leader Name" required>
-<input id="gameid" placeholder="Free Fire UID" required>
+<input id="uid" placeholder="Free Fire UID" required>
 <select id="mode" required>
-<option value="">Select Tournament</option>
-<option>BR Tournament</option>
-<option>CS Tournament</option>
+<option value="">Select Mode</option>
+<option>BR</option>
+<option>CS</option>
 </select>
-<button type="submit">SUBMIT REQUEST</button>
+<button type="submit">SUBMIT REGISTRATION REQUEST</button>
 </form>
-<p id="message"></p>
+<p id="message" class="note"></p>
+<p class="note">Submitting this form does not confirm a tournament slot. Contact TH E-SPORTS for confirmation.</p>
 </div>
 </section>
 
 <section id="about">
-<h2 class="heading">ABOUT <span>TH E-SPORTS</span></h2>
-<div class="card">
-<p>TH E-SPORTS is an esports tournament community.
-Follow our official channels for slot updates, tournament schedules and results.</p>
-<p style="margin-top:18px">
-Instagram: <a href="https://www.instagram.com/th_esports_18_/" style="color:#c58aff"> @th_esports_18_</a>
-</p>
-<p style="margin-top:12px">
-WhatsApp: <a href="https://whatsapp.com/channel/0029VbDuofkDp2QI3hrXFG17" style="color:#c58aff">Join our channel</a>
-</p>
+<h2 class="heading">ABOUT <span class="purple">US</span></h2>
+<div class="cards">
+<div class="card"><h3>TH E-SPORTS</h3><p>Competitive gaming. Strong teams. Unforgettable battles.</p></div>
+<div class="card"><h3>Instagram</h3><p>Follow us for tournament announcements and updates.</p><a class="purple" href="https://www.instagram.com/th_esports_18_/" target="_blank">Visit Instagram →</a></div>
+<div class="card"><h3>WhatsApp</h3><p>Join our official WhatsApp channel.</p><a class="purple" href="https://whatsapp.com/channel/0029VbDuofkDp2QI3hrXFG17" target="_blank">Join Channel →</a></div>
 </div>
 </section>
 
 <footer>
-<p>© 2026 TH E-SPORTS. All Rights Reserved.</p>
+<p>© 2026 TH E-SPORTS</p>
 <p style="margin-top:8px">PLAY FAIR. PLAY HARD. RISE TOGETHER.</p>
 </footer>
 
 <script>
-document.getElementById("regForm").addEventListener("submit",function(e){
-e.preventDefault();
-const request={
-team:document.getElementById("team").value,
-leader:document.getElementById("leader").value,
-uid:document.getElementById("gameid").value,
-mode:document.getElementById("mode").value
+const booked={
+ BR:{1:"FLUXXO ESPORTS",2:"TH ESPORTS"},
+ CS:{}
 };
-const old=JSON.parse(localStorage.getItem("thRequests")||"[]");
-old.push(request);
-localStorage.setItem("thRequests",JSON.stringify(old));
-document.getElementById("message").textContent=
-"Request saved on this device! Contact TH E-SPORTS on Instagram.";
-this.reset();
+let currentMode="BR";
+
+function showSlots(mode){
+ currentMode=mode;
+ document.getElementById("brBtn").classList.toggle("active",mode==="BR");
+ document.getElementById("csBtn").classList.toggle("active",mode==="CS");
+ const grid=document.getElementById("slotGrid");
+ grid.innerHTML="";
+ for(let i=1;i<=24;i++){
+  const name=booked[mode][i];
+  const div=document.createElement("div");
+  div.className="slot "+(name?"booked":"available");
+  const number=document.createElement("strong");
+  number.textContent="SLOT "+String(i).padStart(2,"0");
+  const status=document.createElement("small");
+  status.textContent=name?name:"AVAILABLE";
+  div.append(number,status);
+  grid.appendChild(div);
+ }
+}
+showSlots("BR");
+
+document.getElementById("regForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ const request={
+  team:document.getElementById("team").value,
+  leader:document.getElementById("leader").value,
+  uid:document.getElementById("uid").value,
+  mode:document.getElementById("mode").value
+ };
+ const old=JSON.parse(localStorage.getItem("thRequests")||"[]");
+ old.push(request);
+ localStorage.setItem("thRequests",JSON.stringify(old));
+ document.getElementById("message").textContent="Request saved on this device. Contact us on Instagram for confirmation.";
+ this.reset();
 });
 </script>
-
 </body>
-                                                </html>
-                                                
+</html>
