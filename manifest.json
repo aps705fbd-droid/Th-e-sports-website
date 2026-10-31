@@ -1,12 +1,19 @@
-
 {
   "name": "TH E-SPORTS",
   "short_name": "TH ESPORTS",
-  "description": "Official TH E-SPORTS App",
+  "description": "Official TH E-SPORTS Tournament App",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#090711",
   "theme_color": "#9b45e8",
-  "orientation": "portrait"
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
 }
