@@ -150,5 +150,15 @@ document.getElementById("regForm").addEventListener("submit",function(e){
  this.reset();
 });
 </script>
+ 
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .then(() => console.log("TH E-SPORTS ready"))
+      .catch(error => console.log(error));
+  });
+}
+</script>
 </body>
 </html>
