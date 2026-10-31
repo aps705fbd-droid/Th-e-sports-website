@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TH E-SPORTS | Official</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#080710;color:white;font-family:Arial,sans-serif}
+header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #292039}
+.logo{font-size:23px;font-weight:900;color:#b76aff}
+.logo span{color:white}
+nav a{color:#ddd;text-decoration:none;margin-left:18px;font-size:14px}
+.hero{padding:85px 7%;text-align:center;background:radial-gradient(ellipse at center,#32104d 0%,#100b1c 48%,#080710 78%)}
+.tag{color:#c58aff;letter-spacing:4px;font-size:12px}
+h1{font-size:clamp(42px,9vw,75px);margin:20px 0;font-weight:900}
+h1 span{color:#b65cff}
+.hero p{color:#bbb;line-height:1.7;max-width:550px;margin:auto}
+.btn{display:inline-block;margin-top:28px;padding:14px 27px;background:#9b45e8;color:white;text-decoration:none;border-radius:7px;font-weight:bold}
+section{padding:55px 7%}
+.heading{text-align:center;font-size:30px;margin-bottom:30px}
+.heading span{color:#bd70ff}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:#151020;border:1px solid #39254e;border-radius:12px;padding:23px}
+.card h3{font-size:21px;margin:12px 0}
+.card p{color:#aaa;line-height:1.7;font-size:14px}
+.tagbox{display:inline-block;background:#392052;color:#d9aaff;padding:6px 11px;border-radius:20px;font-size:12px}
+.card a{color:#ce91ff;text-decoration:none;display:inline-block;margin-top:15px}
+.formbox{max-width:520px;margin:auto;background:#151020;border:1px solid #39254e;padding:25px;border-radius:12px}
+input,select{width:100%;padding:14px;margin:9px 0;background:#090712;color:white;border:1px solid #514064;border-radius:6px}
+button{width:100%;padding:14px;background:#9b45e8;color:white;border:0;border-radius:6px;font-weight:bold;margin-top:12px}
+#message{color:#c994ff;margin-top:15px;text-align:center}
+footer{text-align:center;padding:30px;color:#888;border-top:1px solid #30213c}
+footer a{color:#c58aff;text-decoration:none}
+@media(max-width:600px){header{flex-direction:column;gap:15px}nav a{margin:0 7px}.hero{padding:65px 6%}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">TH <span>E-SPORTS</span></div>
+<nav>
+<a href="#home">Home</a>
+<a href="#tournaments">Tournaments</a>
+<a href="#register">Register</a>
+<a href="#about">About</a>
+</nav>
+</header>
+
+<div class="hero" id="home">
+<div class="tag">WELCOME TO THE BATTLE</div>
+<h1>THE WAR <span>BEGINS</span></h1>
+<p>One platform. One community. Endless battles.
+Welcome to TH E-SPORTS — where champions rise.</p>
+<a class="btn" href="#tournaments">EXPLORE TOURNAMENTS</a>
+</div>
+
+<section id="tournaments">
+<h2 class="heading">OUR <span>TOURNAMENTS</span></h2>
+<div class="cards">
+<div class="card">
+<span class="tagbox">BATTLE ROYALE</span>
+<h3>BR Tournament</h3>
+<p>Squad up. Fight hard. Become the champion.</p>
+<a href="#register">Register Now →</a>
+</div>
+<div class="card">
+<span class="tagbox">CLASH SQUAD</span>
+<h3>CS Tournament</h3>
+<p>Show your skills and prove your team's power.</p>
+<a href="#register">Register Now →</a>
+</div>
+<div class="card">
+<span class="tagbox">UPDATES</span>
+<h3>Results & News</h3>
+<p>Stay connected for tournament announcements and match results.</p>
+<a href="https://instagram.com/th_esport_18">View Updates →</a>
+</div>
+</div>
+</section>
+
+<section id="register">
+<h2 class="heading">TEAM <span>REGISTRATION</span></h2>
+<div class="formbox">
+<form id="regForm">
+<input id="team" placeholder="Team Name" required>
+<input id="leader" placeholder="Team Leader Name" required>
+<input id="gameid" placeholder="Free Fire UID" required>
+<select id="mode" required>
+<option value="">Select Tournament</option>
+<option>BR Tournament</option>
+<option>CS Tournament</option>
+</select>
+<button type="submit">SUBMIT REQUEST</button>
+</form>
+<p id="message"></p>
+</div>
+</section>
+
+<section id="about">
+<h2 class="heading">ABOUT <span>TH E-SPORTS</span></h2>
+<div class="card">
+<p>TH E-SPORTS is an esports tournament community.
+Follow our official channels for slot updates, tournament schedules and results.</p>
+<p style="margin-top:18px">
+Instagram: <a href="https://instagram.com/th_esport_18" style="color:#c58aff"> @th_esport_18</a>
+</p>
+<p style="margin-top:12px">
+WhatsApp: <a href="https://whatsapp.com/channel/0029VbDuofkDp2QI3hrXFG17" style="color:#c58aff">Join our channel</a>
+</p>
+</div>
+</section>
+
+<footer>
+<p>© 2026 TH E-SPORTS. All Rights Reserved.</p>
+<p style="margin-top:8px">PLAY FAIR. PLAY HARD. RISE TOGETHER.</p>
+</footer>
+
+<script>
+document.getElementById("regForm").addEventListener("submit",function(e){
+e.preventDefault();
+const request={
+team:document.getElementById("team").value,
+leader:document.getElementById("leader").value,
+uid:document.getElementById("gameid").value,
+mode:document.getElementById("mode").value
+};
+const old=JSON.parse(localStorage.getItem("thRequests")||"[]");
+old.push(request);
+localStorage.setItem("thRequests",JSON.stringify(old));
+document.getElementById("message").textContent=
+"Request saved on this device! Contact TH E-SPORTS on Instagram.";
+this.reset();
+});
+</script>
+
+</body>
+                                                </html>
+                                                
